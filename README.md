@@ -18,7 +18,7 @@ Basic Usage:
 
 ```php
         
-        $client = new \phpcent\Client("http://localhost:8000");
+        $client = new \phpcent\Client("http://localhost:8000/api");
         $client->setSecret("secret key from Centrifugo");
         $client->publish("main_feed", ["message" => "Hello Everybody"]);
         $history = $client->history("main_feed");
@@ -54,7 +54,7 @@ In case if your Centrifugo server has invalid SSL certificate, you can use:
 Since 1.0.5 you can use self signed certificate in safe manner:
 
 ```php
-$client = new \phpcent\Client("https://localhost:8000");
+$client = new \phpcent\Client("https://localhost:8000/api");
 $client->setSecret("secret key from Centrifugo");
 $transport = new \phpcent\Transport();
 $transport->setCert("/path/to/certificate.pem");
